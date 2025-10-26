@@ -1,0 +1,75 @@
+2025-10-27T00:53:01+03:00       INFO    [misconfig] Misconfiguration scanning is enabled
+2025-10-27T00:53:01+03:00       INFO    [misconfig] Need to update the checks bundle
+2025-10-27T00:53:01+03:00       INFO    [misconfig] Downloading the checks bundle...
+165.46 KiB / 165.46 KiB [------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------] 100.00% 215.06 KiB p/s 1.0s
+2025-10-27T00:53:05+03:00       INFO    Detected config files   num=2
+
+Report Summary
+
+┌────────────────────┬────────────┬───────────────────┐
+│       Target       │    Type    │ Misconfigurations │
+├────────────────────┼────────────┼───────────────────┤
+│ backend/Dockerfile │ dockerfile │         3         │
+├────────────────────┼────────────┼───────────────────┤
+│ proxy/Dockerfile   │ dockerfile │         1         │
+└────────────────────┴────────────┴───────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+backend/Dockerfile (dockerfile)
+===============================
+Tests: 20 (SUCCESSES: 17, FAILURES: 3)
+Failures: 3 (HIGH: 3, CRITICAL: 0)
+
+AVD-DS-0002 (HIGH): Specify at least 1 USER command in Dockerfile with non-root user as argument
+════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+────────────────────────────────────────
+
+
+AVD-DS-0017 (HIGH): The instruction 'RUN <package-manager> update' should always be followed by '<package-manager> install' in the same RUN statement.
+════════════════════════════════════════
+The instruction 'RUN <package-manager> update' should always be followed by '<package-manager> install' in the same RUN statement.
+
+See https://avd.aquasec.com/misconfig/ds017
+────────────────────────────────────────
+ backend/Dockerfile:22-25
+────────────────────────────────────────
+  22 ┌ RUN <<EOF
+  23 │ apk update
+  24 │ apk add git
+  25 └ EOF
+────────────────────────────────────────
+
+
+AVD-DS-0025 (HIGH): '--no-cache' is missed: apk update ; apk add git
+════════════════════════════════════════
+You should use 'apk add' with '--no-cache' to clean package cached data and reduce image size.
+
+See https://avd.aquasec.com/misconfig/ds025
+────────────────────────────────────────
+ backend/Dockerfile:22-25
+────────────────────────────────────────
+  22 ┌ RUN <<EOF
+  23 │ apk update
+  24 │ apk add git
+  25 └ EOF
+────────────────────────────────────────
+
+
+
+proxy/Dockerfile (dockerfile)
+=============================
+Tests: 20 (SUCCESSES: 19, FAILURES: 1)
+Failures: 1 (HIGH: 1, CRITICAL: 0)
+
+AVD-DS-0002 (HIGH): Specify at least 1 USER command in Dockerfile with non-root user as argument
+════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+────────────────────────────────────────

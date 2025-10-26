@@ -1,0 +1,438 @@
+{
+    "matches": [
+        {
+            "vulnerability": {
+                "id": "GHSA-m2qf-hxjv-5gpq",
+                "dataSource": "https://github.com/advisories/GHSA-m2qf-hxjv-5gpq",
+                "namespace": "github:language:python",
+                "severity": "High",
+                "urls": [],
+                "description": "Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header",
+                "cvss": [
+                    {
+                        "type": "Secondary",
+                        "version": "3.1",
+                        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+                        "metrics": {
+                            "baseScore": 7.5,
+                            "exploitabilityScore": 3.9,
+                            "impactScore": 3.6
+                        },
+                        "vendorMetadata": {}
+                    }
+                ],
+                "epss": [
+                    {
+                        "cve": "CVE-2023-30861",
+                        "epss": 0.00215,
+                        "percentile": 0.44074,
+                        "date": "2025-10-26"
+                    }
+                ],
+                "cwes": [
+                    {
+                        "cve": "CVE-2023-30861",
+                        "cwe": "CWE-539",
+                        "source": "security-advisories@github.com",
+                        "type": "Secondary"
+                    }
+                ],
+                "fix": {
+                    "versions": [
+                        "2.2.5"
+                    ],
+                    "state": "fixed",
+                    "available": [
+                        {
+                            "version": "2.2.5",
+                            "date": "2023-05-03",
+                            "kind": "first-observed"
+                        }
+                    ]
+                },
+                "advisories": [],
+                "risk": 0.16125
+            },
+            "relatedVulnerabilities": [
+                {
+                    "id": "CVE-2023-30861",
+                    "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-30861",
+                    "namespace": "nvd:cpe",
+                    "severity": "High",
+                    "urls": [
+                        "https://github.com/pallets/flask/commit/70f906c51ce49c485f1d355703e9cc3386b1cc2b",
+                        "https://github.com/pallets/flask/commit/afd63b16170b7c047f5758eb910c416511e9c965",
+                        "https://github.com/pallets/flask/releases/tag/2.2.5",
+                        "https://github.com/pallets/flask/releases/tag/2.3.2",
+                        "https://github.com/pallets/flask/security/advisories/GHSA-m2qf-hxjv-5gpq",
+                        "https://lists.debian.org/debian-lts-announce/2023/08/msg00024.html",
+                        "https://security.netapp.com/advisory/ntap-20230818-0006/",
+                        "https://www.debian.org/security/2023/dsa-5442",
+                        "https://github.com/pallets/flask/commit/70f906c51ce49c485f1d355703e9cc3386b1cc2b",
+                        "https://github.com/pallets/flask/commit/afd63b16170b7c047f5758eb910c416511e9c965",
+                        "https://github.com/pallets/flask/releases/tag/2.2.5",
+                        "https://github.com/pallets/flask/releases/tag/2.3.2",
+                        "https://github.com/pallets/flask/security/advisories/GHSA-m2qf-hxjv-5gpq",
+                        "https://lists.debian.org/debian-lts-announce/2023/08/msg00024.html",
+                        "https://security.netapp.com/advisory/ntap-20230818-0006/",
+                        "https://www.debian.org/security/2023/dsa-5442"
+                    ],
+                    "description": "Flask is a lightweight WSGI web application framework. When all of the following conditions are met, a response containing data intended for one client may be cached and subsequently sent by the proxy to other clients. If the proxy also caches `Set-Cookie` headers, it may send one client's `session` cookie to other clients. The severity depends on the application's use of the session and the proxy's behavior regarding cookies. The risk depends on all these conditions being met.\n\n1. The application must be hosted behind a caching proxy that does not strip cookies or ignore responses with cookies.\n2. The application sets `session.permanent = True`\n3. The application does not access or modify the session at any point during a request.\n4. `SESSION_REFRESH_EACH_REQUEST` enabled (the default).\n5. The application does not set a `Cache-Control` header to indicate that a page is private or should not be cached.\n\nThis happens because vulnerable versions of Flask only set the `Vary: Cookie` header when the session is accessed or modified, not when it is refreshed (re-sent to update the expiration) without being accessed or modified. This issue has been fixed in versions 2.3.2 and 2.2.5.",
+                    "cvss": [
+                        {
+                            "source": "nvd@nist.gov",
+                            "type": "Primary",
+                            "version": "3.1",
+                            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+                            "metrics": {
+                                "baseScore": 7.5,
+                                "exploitabilityScore": 3.9,
+                                "impactScore": 3.6
+                            },
+                            "vendorMetadata": {}
+                        },
+                        {
+                            "source": "security-advisories@github.com",
+                            "type": "Secondary",
+                            "version": "3.1",
+                            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+                            "metrics": {
+                                "baseScore": 7.5,
+                                "exploitabilityScore": 3.9,
+                                "impactScore": 3.6
+                            },
+                            "vendorMetadata": {}
+                        }
+                    ],
+                    "epss": [
+                        {
+                            "cve": "CVE-2023-30861",
+                            "epss": 0.00215,
+                            "percentile": 0.44074,
+                            "date": "2025-10-26"
+                        }
+                    ],
+                    "cwes": [
+                        {
+                            "cve": "CVE-2023-30861",
+                            "cwe": "CWE-539",
+                            "source": "security-advisories@github.com",
+                            "type": "Secondary"
+                        }
+                    ]
+                }
+            ],
+            "matchDetails": [
+                {
+                    "type": "exact-direct-match",
+                    "matcher": "python-matcher",
+                    "searchedBy": {
+                        "language": "python",
+                        "namespace": "github:language:python",
+                        "package": {
+                            "name": "flask",
+                            "version": "2.0.1"
+                        }
+                    },
+                    "found": {
+                        "vulnerabilityID": "GHSA-m2qf-hxjv-5gpq",
+                        "versionConstraint": "<2.2.5 (python)"
+                    },
+                    "fix": {
+                        "suggestedVersion": "2.2.5"
+                    }
+                }
+            ],
+            "artifact": {
+                "id": "pkg:pypi/flask@2.0.1?package-id=603de02e4ac50f42",
+                "name": "flask",
+                "version": "2.0.1",
+                "type": "python",
+                "locations": [
+                    {
+                        "path": "\\backend\\requirements.txt",
+                        "accessPath": ""
+                    }
+                ],
+                "language": "python",
+                "licenses": [],
+                "cpes": [
+                    "cpe:2.3:a:python-flask:python-flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python-flask:python_flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python_flask:python-flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python_flask:python_flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python:python-flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python:python_flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:flask:python-flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:flask:python_flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python-flask:flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python_flask:flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:python:flask:2.0.1:*:*:*:*:*:*:*",
+                    "cpe:2.3:a:flask:flask:2.0.1:*:*:*:*:*:*:*"
+                ],
+                "purl": "pkg:pypi/flask@2.0.1",
+                "upstreams": []
+            }
+        }
+    ],
+    "source": {
+        "type": "file",
+        "target": "."
+    },
+    "distro": {
+        "name": "",
+        "version": "",
+        "idLike": null
+    },
+    "descriptor": {
+        "name": "grype",
+        "version": "0.102.0",
+        "configuration": {
+            "output": [
+                "json"
+            ],
+            "file": "",
+            "pretty": false,
+            "distro": "",
+            "add-cpes-if-none": false,
+            "output-template-file": "",
+            "check-for-app-update": true,
+            "only-fixed": false,
+            "only-notfixed": false,
+            "ignore-wontfix": "",
+            "platform": "",
+            "search": {
+                "scope": "squashed",
+                "unindexed-archives": false,
+                "indexed-archives": true
+            },
+            "ignore": [
+                {
+                    "vulnerability": "",
+                    "include-aliases": false,
+                    "reason": "",
+                    "namespace": "",
+                    "fix-state": "",
+                    "package": {
+                        "name": "kernel-headers",
+                        "version": "",
+                        "language": "",
+                        "type": "rpm",
+                        "location": "",
+                        "upstream-name": "kernel"
+                    },
+                    "vex-status": "",
+                    "vex-justification": "",
+                    "match-type": "exact-indirect-match"
+                },
+                {
+                    "vulnerability": "",
+                    "include-aliases": false,
+                    "reason": "",
+                    "namespace": "",
+                    "fix-state": "",
+                    "package": {
+                        "name": "linux(-.*)?-headers-.*",
+                        "version": "",
+                        "language": "",
+                        "type": "deb",
+                        "location": "",
+                        "upstream-name": "linux.*"
+                    },
+                    "vex-status": "",
+                    "vex-justification": "",
+                    "match-type": "exact-indirect-match"
+                },
+                {
+                    "vulnerability": "",
+                    "include-aliases": false,
+                    "reason": "",
+                    "namespace": "",
+                    "fix-state": "",
+                    "package": {
+                        "name": "linux-libc-dev",
+                        "version": "",
+                        "language": "",
+                        "type": "deb",
+                        "location": "",
+                        "upstream-name": "linux"
+                    },
+                    "vex-status": "",
+                    "vex-justification": "",
+                    "match-type": "exact-indirect-match"
+                }
+            ],
+            "exclude": [],
+            "externalSources": {
+                "enable": false,
+                "maven": {
+                    "searchUpstreamBySha1": true,
+                    "baseUrl": "https://search.maven.org/solrsearch/select",
+                    "rateLimit": 300000000
+                }
+            },
+            "match": {
+                "java": {
+                    "using-cpes": false
+                },
+                "jvm": {
+                    "using-cpes": true
+                },
+                "dotnet": {
+                    "using-cpes": false
+                },
+                "golang": {
+                    "using-cpes": false,
+                    "always-use-cpe-for-stdlib": true,
+                    "allow-main-module-pseudo-version-comparison": false
+                },
+                "javascript": {
+                    "using-cpes": false
+                },
+                "python": {
+                    "using-cpes": false
+                },
+                "ruby": {
+                    "using-cpes": false
+                },
+                "rust": {
+                    "using-cpes": false
+                },
+                "stock": {
+                    "using-cpes": true
+                }
+            },
+            "fail-on-severity": "high",
+            "registry": {
+                "insecure-skip-tls-verify": false,
+                "insecure-use-http": false,
+                "auth": null,
+                "ca-cert": ""
+            },
+            "show-suppressed": false,
+            "by-cve": false,
+            "SortBy": {
+                "sort-by": "risk"
+            },
+            "name": "",
+            "default-image-pull-source": "",
+            "vex-documents": [],
+            "vex-add": [],
+            "match-upstream-kernel-headers": false,
+            "fix-channel": {
+                "redhat-eus": {
+                    "apply": "auto",
+                    "versions": ">= 8.0"
+                }
+            },
+            "timestamp": true,
+            "db": {
+                "cache-dir": "C:\\Users\\Max\\AppData\\Local\\cache\\grype\\db",
+                "update-url": "https://grype.anchore.io/databases",
+                "ca-cert": "",
+                "auto-update": true,
+                "validate-by-hash-on-start": true,
+                "validate-age": true,
+                "max-allowed-built-age": 432000000000000,
+                "require-update-check": false,
+                "update-available-timeout": 30000000000,
+                "update-download-timeout": 300000000000,
+                "max-update-check-frequency": 7200000000000
+            },
+            "exp": {},
+            "dev": {
+                "db": {
+                    "debug": false
+                }
+            }
+        },
+        "db": {
+            "status": {
+                "schemaVersion": "v6.1.3",
+                "from": "https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.3_2025-10-26T14:32:54Z_1761496156.tar.zst?checksum=sha256%3Ac3b996dab318d51529fd7ff711d911e44d9b0ddbe077b3c79c2b318e12796fb4",
+                "built": "2025-10-26T16:29:16Z",
+                "path": "C:\\Users\\Max\\AppData\\Local\\cache\\grype\\db\\6\\vulnerability.db",
+                "valid": true
+            },
+            "providers": {
+                "alma": {
+                    "captured": "2025-10-26T14:32:54Z",
+                    "input": "xxh64:cb6c0ed6a811075d"
+                },
+                "alpine": {
+                    "captured": "2025-10-26T14:32:58Z",
+                    "input": "xxh64:8dc2faf587c1f212"
+                },
+                "amazon": {
+                    "captured": "2025-10-26T14:32:56Z",
+                    "input": "xxh64:f44a0836ea9db781"
+                },
+                "bitnami": {
+                    "captured": "2025-10-26T14:33:00Z",
+                    "input": "xxh64:d0a50a9b6a0843c4"
+                },
+                "chainguard": {
+                    "captured": "2025-10-26T14:33:07Z",
+                    "input": "xxh64:6edd3583dd2c6239"
+                },
+                "chainguard-libraries": {
+                    "captured": "2025-10-26T14:33:01Z",
+                    "input": "xxh64:30f2a2b61d8e37a9"
+                },
+                "debian": {
+                    "captured": "2025-10-26T14:32:57Z",
+                    "input": "xxh64:0f8ee3568b13d12c"
+                },
+                "echo": {
+                    "captured": "2025-10-26T14:32:54Z",
+                    "input": "xxh64:aa76c52a40272055"
+                },
+                "epss": {
+                    "captured": "2025-10-26T14:32:57Z",
+                    "input": "xxh64:601d3fd3882eed5c"
+                },
+                "github": {
+                    "captured": "2025-10-26T14:32:56Z",
+                    "input": "xxh64:6a12ccbe7ed846d4"
+                },
+                "kev": {
+                    "captured": "2025-10-26T14:33:01Z",
+                    "input": "xxh64:fd750722bbb5d703"
+                },
+                "mariner": {
+                    "captured": "2025-10-26T14:33:04Z",
+                    "input": "xxh64:f1679d09a3e6d7f2"
+                },
+                "minimos": {
+                    "captured": "2025-10-26T14:33:00Z",
+                    "input": "xxh64:8abab9a623e0c5ad"
+                },
+                "nvd": {
+                    "captured": "2025-10-26T14:33:59Z",
+                    "input": "xxh64:8a43acba25b81479"
+                },
+                "oracle": {
+                    "captured": "2025-10-26T14:33:00Z",
+                    "input": "xxh64:e2a2487a0bd10b9e"
+                },
+                "rhel": {
+                    "captured": "2025-10-26T14:33:24Z",
+                    "input": "xxh64:3be254ba66069bfa"
+                },
+                "sles": {
+                    "captured": "2025-10-26T14:33:10Z",
+                    "input": "xxh64:ddac94ca26d199f5"
+                },
+                "ubuntu": {
+                    "captured": "2025-10-26T14:34:16Z",
+                    "input": "xxh64:e90dbc4279731235"
+                },
+                "wolfi": {
+                    "captured": "2025-10-26T14:32:57Z",
+                    "input": "xxh64:b08ef0a0c7298cd3"
+                }
+            }
+        },
+        "timestamp": "2025-10-27T00:17:39.3057052+03:00"
+    }
+}

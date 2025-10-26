@@ -1,0 +1,255 @@
+{
+    "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.6",
+    "serialNumber": "urn:uuid:4e8d8417-238b-48a1-bcf7-8599cc977924",
+    "version": 1,
+    "metadata": {
+        "timestamp": "2025-10-27T00:10:57+03:00",
+        "tools": {
+            "components": [
+                {
+                    "type": "application",
+                    "author": "anchore",
+                    "name": "syft",
+                    "version": "1.36.0"
+                }
+            ]
+        },
+        "component": {
+            "bom-ref": "af63bd4c8601b7f1",
+            "type": "file",
+            "name": "."
+        }
+    },
+    "components": [
+        {
+            "bom-ref": "pkg:pypi/flask@2.0.1?package-id=603de02e4ac50f42",
+            "type": "library",
+            "name": "flask",
+            "version": "2.0.1",
+            "cpe": "cpe:2.3:a:python-flask:python-flask:2.0.1:*:*:*:*:*:*:*",
+            "purl": "pkg:pypi/flask@2.0.1",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "python-package-cataloger"
+                },
+                {
+                    "name": "syft:package:language",
+                    "value": "python"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "python"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "python-pip-requirements-entry"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-flask:python_flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_flask:python-flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_flask:python_flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python:python-flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python:python_flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:flask:python-flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:flask:python_flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-flask:flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_flask:flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python:flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:flask:flask:2.0.1:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "\\backend\\requirements.txt"
+                }
+            ]
+        },
+        {
+            "bom-ref": "pkg:pypi/mysql-connector@2.2.9?package-id=190e7db7b810c3ec",
+            "type": "library",
+            "name": "mysql-connector",
+            "version": "2.2.9",
+            "cpe": "cpe:2.3:a:python-mysql-connector:python-mysql-connector:2.2.9:*:*:*:*:*:*:*",
+            "purl": "pkg:pypi/mysql-connector@2.2.9",
+            "properties": [
+                {
+                    "name": "syft:package:foundBy",
+                    "value": "python-package-cataloger"
+                },
+                {
+                    "name": "syft:package:language",
+                    "value": "python"
+                },
+                {
+                    "name": "syft:package:type",
+                    "value": "python"
+                },
+                {
+                    "name": "syft:package:metadataType",
+                    "value": "python-pip-requirements-entry"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-mysql-connector:python_mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_mysql_connector:python-mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_mysql_connector:python_mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql-connector:python-mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql-connector:python_mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql_connector:python-mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql_connector:python_mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-mysql-connector:mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-mysql-connector:mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_mysql_connector:mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_mysql_connector:mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-mysql:python-mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-mysql:python_mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_mysql:python-mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_mysql:python_mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql-connector:mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql-connector:mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql_connector:mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql_connector:mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python:python-mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python:python_mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql:python-mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql:python_mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-mysql:mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python-mysql:mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_mysql:mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python_mysql:mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python:mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:python:mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql:mysql-connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:cpe23",
+                    "value": "cpe:2.3:a:mysql:mysql_connector:2.2.9:*:*:*:*:*:*:*"
+                },
+                {
+                    "name": "syft:location:0:path",
+                    "value": "\\backend\\requirements.txt"
+                }
+            ]
+        }
+    ]
+}
