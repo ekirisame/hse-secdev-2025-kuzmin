@@ -55,7 +55,7 @@
 - [ ] **Rate-limit / timeouts / retry budget** → Evidence: `EVIDENCE/load-after.png`
 - [ ] **Input validation** (типы/длины/allowlist) → Evidence: `EVIDENCE/sast-YYYY-MM-DD.*#input`
 - [ ] **Secrets handling** (нет секретов в git; хранилище секретов) → Evidence: `EVIDENCE/secrets-YYYY-MM-DD.*`
-- [x] **HTTP security headers / CSP / HTTPS-only** → Evidence: `EVIDENCE/dummy-nginx-conf.txt`
+- [x] **HTTP security headers / CSP / HTTPS-only** → Evidence: `EVIDENCE/conf-upd.txt`
 - [ ] **AuthZ / RLS / tenant isolation** → Evidence: `EVIDENCE/rls-policy.txt`
 - [ ] **Container/IaC best-practice** (минимальная база, readonly fs, …) → Evidence: `EVIDENCE/trivy-YYYY-MM-DD.txt#cfg`
 
