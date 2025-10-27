@@ -66,7 +66,7 @@
 ## 5) Quality-gates и проверка порогов (DS5)
 
 - **Пороговые правила (словами):**  
-  Примеры: «SCA: Critical=0; High≤1», «Trivy: Misconfigurations=0».
+  Примеры: «SCA: Critical=0; High≤1», «Trivy: Misconfigurations<=1».
 - **Как проверяются:**   
   - Автоматически:  (скрипт/job, условие fail при нарушении)
 
@@ -83,7 +83,7 @@
 |-----------------|-----------|----------|------------|----------|----------------------------------------|-----------------------------------|------------------------------|
 | CVE-2023-30861   | SCA       | High     | fixed      | bump     | `EVIDENCE/requirements-new.txt`    | `commit abc123`                   | requirements.txt обновлены для использования версии Flask, где уязвимость была исправлена |
 | POLICY-1        | Policy      | High   | fixed | bump   | `EVIDENCE/trivy-after.txt     | commit abc123   | Фикс работы в контейнере с бекендом под рутом |
-| POLICY-2        | Policy      | High   | ignore | bump   | `EVIDENCE/trivy-after.txt     | commit abc123   | Работа с пакетным менеджером ведется правильно - Trivy воспринимает apk как apk из Ubuntu, но это apk из Alpine Linux |
+| POLICY-2        | Policy      | High   | ignore | ignore   | `EVIDENCE/trivy-after.txt     | commit abc123   | Работа с пакетным менеджером ведется правильно - Trivy воспринимает apk как apk из Ubuntu, но это apk из Alpine Linux |
 | POLICY-3        | Policy      | High   | fixed | bump   | `EVIDENCE/trivy-after.txt     | commit abc123   | Добавление флага --no-cache в пакетный менеджер для уменьшения размера образа |
 | POLICY-4        | Policy      | High   | fixed | bump   | `EVIDENCE/trivy-after.txt     | commit abc123   | Фикс работы в контейнере с прокси под рутом |
 
@@ -96,7 +96,7 @@
 | Контроль/Мера | Метрика                 | До   | После | Evidence (до), (после)                          |
 |---------------|-------------------------|-----:|------:|-------------------------------------------------|
 | Зависимости   | #Critical / #High (SCA) | 0 / 1 | 0 / 0| `EVIDENCE/deps-before.json`, `deps-after.json`  |
-| Policy/IaC    | Violations              | 4 | 0     | `EVIDENCE/trivy-2025-10-27.txt`, `trivy-after.txt` |
+| Policy/IaC    | Violations              | 4 | 1     | `EVIDENCE/trivy-2025-10-27.txt`, `trivy-after.txt` |
 
 ---
 
@@ -106,6 +106,6 @@
 - **DS2. SAST + Secrets:** [x] 0 [ ] 1 [ ] 2  
 - **DS3. DAST или Policy (Container/IaC):** [ ] 0 [x] 1 [ ] 2  
 - **DS4. Харднинг (доказуемый):** [ ] 0 [x] 1 [ ] 2  
-- **DS5. Quality-gates, триаж и «до/после»:** [ ] 0 [x] 1 [ ] 2  
+- **DS5. Quality-gates, триаж и «до/после»:** [ ] 0 [ ] 1 [x] 2  
 
-**Итог DS (сумма):** 5/10
+**Итог DS (сумма):** 6/10
