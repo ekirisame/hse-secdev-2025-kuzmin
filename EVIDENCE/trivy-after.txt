@@ -1,0 +1,35 @@
+2025-10-27T10:21:27+03:00       INFO    [misconfig] Misconfiguration scanning is enabled
+2025-10-27T10:21:31+03:00       INFO    Detected config files   num=2
+
+Report Summary
+
+┌────────────────────┬────────────┬───────────────────┐
+│       Target       │    Type    │ Misconfigurations │
+├────────────────────┼────────────┼───────────────────┤
+│ backend/Dockerfile │ dockerfile │         1         │
+├────────────────────┼────────────┼───────────────────┤
+│ proxy/Dockerfile   │ dockerfile │         0         │
+└────────────────────┴────────────┴───────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+backend/Dockerfile (dockerfile)
+===============================
+Tests: 20 (SUCCESSES: 19, FAILURES: 1)
+Failures: 1 (HIGH: 1, CRITICAL: 0)
+
+AVD-DS-0017 (HIGH): The instruction 'RUN <package-manager> update' should always be followed by '<package-manager> install' in the same RUN statement.
+════════════════════════════════════════
+The instruction 'RUN <package-manager> update' should always be followed by '<package-manager> install' in the same RUN statement.
+
+See https://avd.aquasec.com/misconfig/ds017
+────────────────────────────────────────
+ backend/Dockerfile:25-28
+────────────────────────────────────────
+  25 ┌ RUN <<EOF
+  26 │ apk update
+  27 │ apk add git --no-cache
+  28 └ EOF
+────────────────────────────────────────
